@@ -35,23 +35,35 @@ Pseudocode:
 using namespace std;
 
 int main() {
-    cout << "Hello, welcome to Frank's Carpet Cleaning Service" << endl;
-    cout << "\nHow many rooms would you like cleaned? ";
+     cout << "Hello, welcome to Frank's Carpet Cleaning Service" << endl;
+	
+    cout << "\nHow many Small rooms would you like cleaned? ";
+    int number_of_small_rooms {0};
+    cin >> number_of_small_rooms;
+	
+	cout << "\nHow many Big rooms would you like cleaned? ";
+	int number_of__big_rooms {0};
+	cin >> number_of__big_rooms;
     
-    int number_of_rooms {0};
-    cin >> number_of_rooms;
-    
-    const double  price_per_room {32.5};
+    const double  price_per_Small_room {25};
+	const double  price_per_Big_room {35};
     const double sales_tax {0.06};
     const int estimate_expiry {30}; // days
     
     cout << "\nEstimate for carpet cleaning service" << endl;
-    cout << "Number of rooms: " << number_of_rooms << endl;
-    cout << "Price per room: $" << price_per_room << endl;
-    cout << "Cost : $" << price_per_room * number_of_rooms << endl;
-    cout << "Tax: $" << price_per_room * number_of_rooms * sales_tax << endl;
+	
+    cout << "Number of Small rooms: " << number_of_small_rooms << endl;
+	  cout << "Number of Big rooms: " << number_of__big_rooms << endl;
+	  
+    cout << "Price per Small room: $" << price_per_Small_room << endl;
+	cout << "Price per Big  room: $" << price_per_Big_room << endl;
+	
+	double TotalCost = (price_per_Small_room * number_of_small_rooms) + (price_per_Big_room * number_of__big_rooms);
+	
+    cout << "Cost : $" << TotalCost << endl;
+    cout << "Tax: $" << TotalCost * sales_tax << endl;
     cout << "===============================" << endl;
-    cout << "Total estimate: $" << (price_per_room * number_of_rooms) + (price_per_room * number_of_rooms * sales_tax) << endl;
+    cout << "Total estimate: $" << TotalCost + (TotalCost * sales_tax) << endl;
     cout << "This estimate is valid for " << estimate_expiry << " days" << endl;
     
     cout << endl;
