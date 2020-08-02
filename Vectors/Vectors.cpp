@@ -6,7 +6,10 @@
 
 using namespace std;
 
-int main() {
+void VectorTasks();
+
+int main() 
+{
     
 //    vector <char> vowels;         // empty 
 //    vector <char> vowels (5);      // 5 initialized to zero 
@@ -91,6 +94,39 @@ int main() {
     cout << movie_ratings.at(0).at(3) << endl;
     
     cout << endl;
+
+    VectorTasks();
     return 0;
 }
 
+void VectorTasks()
+{
+  vector <int> Vector1;
+	vector <int> Vector2;
+	
+	Vector1.push_back(10);
+	Vector1.push_back(20);
+	
+	Vector2.push_back(100);
+	Vector2.push_back(200);
+	
+	vector<vector<int>> Vector_2d;
+	
+	Vector_2d.push_back(Vector1);
+	Vector_2d.push_back(Vector2);
+	
+	cout << Vector1.at(0) << "\n";
+	cout << Vector1.at(1) << "\n";
+	cout << "Total : " << Vector1.size();
+	cout << "\n======================\n";
+	cout << Vector2[0] << "\n";
+	cout << Vector2[1] << "\n";
+	cout << "Total : " << Vector2.size();
+	cout << "\n======================\n";
+	cout << Vector_2d.at(0).at(0) << " " << Vector_2d.at(0).at(1) << "\n";
+	cout << Vector_2d.at(1).at(0) << " " << Vector_2d.at(1).at(1) << "\n";
+	cout << "\n======================\n";
+	Vector_2d.at(0).at(0) = 1000; // if Use Vector1.at(0) = 1000; Then Nothing Will Happen
+	cout << Vector_2d.at(0).at(0) << " " << Vector_2d.at(0).at(1) << "\n";
+	cout << Vector_2d.at(1).at(0) << " " << Vector_2d.at(1).at(1) << "\n";
+}
